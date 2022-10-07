@@ -3,15 +3,31 @@
   padding: 100px;
   justify-content: center;
   gap: 200px;
+  background: #7f00ff;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,
+      #e100ff,
+      #7f00ff);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,
+      #e100ff,
+      #7f00ff);
+  color: #fff;
+}
+
+h2 {
+  color: #fff;
 }
 
 img {
-  width: 300px;
+  width: 100px;
+  border-radius: 10px;
 }
 
 .price {
   font-size: 36px;
   font-weight: 600;
+  color: #fff;
 }
 
 .description {

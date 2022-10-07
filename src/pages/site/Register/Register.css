@@ -1,6 +1,6 @@
-.app__hero {
+.app__register {
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 140px;
   background: #7f00ff; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -13,16 +13,42 @@
     #7f00ff
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.app__hero__content h2 {
+.app__register__form h1 {
   color: white;
-  font-size: 38px;
 }
-.app__hero__content p {
-  color: lightgrey;
-  font-size: 20px;
-}
-.app__hero__btns button {
+.app__register__form {
+  border: solid;
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
   padding: 20px;
+  border: none;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.app__register__form input {
+  width: 400px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: block;
+}
+.app__register__form label {
+  color: white;
+  margin-bottom: 10px;
+}
+.app__register__form button {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 10px;
   border: none;
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -35,20 +61,11 @@
   transition: 0.3s linear;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
-.app__hero__btns button:hover {
+.app__register__form button:hover {
   background: rgba(255, 255, 255, 0.35);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-}
-.app__hero__btns--get-started {
-  margin-right: 20px;
-}
-.app__hero__btns {
-  margin-top: 50px;
-}
-.app__hero img {
-  width: 738px;
 }

@@ -12,7 +12,9 @@ const Header = () => {
       <div className="app__header__middle">
         <ul className="app__header__middle__items">
           <li>
-            <Link className="app__header__middle__items__link">Home</Link>
+            <Link to="/" className="app__header__middle__items__link">
+              Home
+            </Link>
           </li>
           <li>
             <Link className="app__header__middle__items__link">Pricing</Link>

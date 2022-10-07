@@ -3,28 +3,7 @@ import './Footer.css'
 const Footer = () => {
   return (
     <footer class="text-center text-lg-start bg-light text-muted app__footer">
-      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-        <div>
-          <a href="" class="me-4 text-reset">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="" class="me-4 text-reset">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="" class="me-4 text-reset">
-            <i class="fab fa-google"></i>
-          </a>
-          <a href="" class="me-4 text-reset">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="" class="me-4 text-reset">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="" class="me-4 text-reset">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-      </section>
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"></section>
 
       <section class="">
         <div class="container text-center text-md-start mt-5">

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Root from "../pages/site/Root";
 import Home from "../pages/site/Home"
 import Login from "../pages/site/Login"
@@ -53,3 +54,55 @@ export const ROUTES = [{
         ],
     },
 ];
+=======
+import Root from 'pages/site/root'
+import Home from 'pages/site/Home'
+export const ROUTES = [
+  {
+    path: '/',
+    element: <Root />,
+    children: [
+      {
+        path: '',
+        element: <Home />,
+      },
+      {
+        path: 'login',
+        element: <Login />,
+      },
+      {
+        path: 'register',
+        element: <Register />,
+      },
+    ],
+  },
+  {
+    path: '/company-admin',
+    element: <CompanyAdminRoot />,
+    children: [
+      {
+        path: '',
+        element: <CompanyDashboard />,
+      },
+      {
+        path: 'create-link',
+        element: <CreateLink />,
+      },
+    ],
+  },
+  {
+    path: '/admin',
+    element: <AdminRoot />,
+    children: [
+      {
+        path: '',
+        element: <Dashboard />,
+      },
+      {
+        path: 'company-detail/:id',
+        element: <ProductDetail />,
+      },
+    ],
+  },
+]
+>>>>>>> caa5c01afb0af820aafb5384f66914a12fab8e96

@@ -1,4 +1,5 @@
 import { Table } from "antd";
+import { Button } from 'antd';
 import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 
@@ -38,7 +39,7 @@ function Dashboard() {
       },
       {
         title: 'Action',
-        render: () => <Link to={`/company/${company.id}`}><button>detail</button></Link>,
+        render: () => <Link to={`/company/${company.id}`}><Button type="primary">detail</Button></Link>,
       },
   ];
   return <div>

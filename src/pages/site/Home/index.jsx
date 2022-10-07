@@ -1,4 +1,5 @@
 import React from 'react'
+import './Home.css'
 function index() {
   return (
     <div className="app__hero">
@@ -24,7 +25,12 @@ function index() {
             </div>
           </div>
           <div className="col-lg-6">
-            <div className="app__hero__image"></div>
+            <div className="app__hero__image">
+              <img
+                src="https://www.helcim.com/images/helcim-card-reader-smile.webp"
+                alt=""
+              />
+            </div>
           </div>
         </div>
       </div>

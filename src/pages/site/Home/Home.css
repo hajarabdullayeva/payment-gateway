@@ -1,9 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.app__header {
+.app__hero {
+  padding-top: 100px;
+  padding-bottom: 100px;
   background: #7f00ff; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -15,31 +12,17 @@
     #e100ff,
     #7f00ff
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  display: flex;
-  padding: 20px;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.app__header__middle__items {
-  display: flex;
-  list-style: none;
-  margin-bottom: 0;
-}
-.app__header__middle__items li {
-  margin-right: 20px;
-}
-.app__header__middle__items__link {
+.app__hero__content h2 {
   color: white;
-  font-size: 18px;
+  font-size: 38px;
 }
-.header__logo {
-  font-size: 32px;
-  margin: 0;
+.app__hero__content p {
+  color: lightgrey;
+  font-size: 20px;
 }
-.app__header__right__item {
-  padding: 10px;
+.app__hero__btns button {
+  padding: 20px;
   border: none;
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -52,7 +35,7 @@
   transition: 0.3s linear;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
-.app__header__right__item:hover {
+.app__hero__btns button:hover {
   background: rgba(255, 255, 255, 0.35);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(20px);
@@ -60,6 +43,9 @@
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
-.app__header__right__item--login {
-  margin-right: 10px;
+.app__hero__btns--get-started {
+  margin-right: 20px;
+}
+.app__hero__btns {
+  margin-top: 50px;
 }

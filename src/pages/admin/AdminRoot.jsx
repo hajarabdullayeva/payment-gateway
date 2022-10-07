@@ -1,4 +1,6 @@
-import React from "react";
+import { Footer, Header } from 'antd/lib/layout/layout'
+import React from 'react'
+import { Outlet } from 'react-router-dom'
 
 function AdminRoot() {
   return (
@@ -7,7 +9,7 @@ function AdminRoot() {
       <Outlet />
       <Footer />
     </>
-  );
+  )
 }
 
-export default AdminRoot;
+export default AdminRoot

@@ -13,6 +13,9 @@
     #7f00ff
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+.app__login__form h1 {
+  color: white;
+}
 .app__login__form {
   border: solid;
   width: 500px;

@@ -1,5 +1,13 @@
-import Root from "pages/site/root";
-import Home from "pages/site/Home"
+import Root from "../pages/site/Root";
+import Home from "../pages/site/Home"
+import Login from "../pages/site/Login"
+import Register from "../pages/site/Register"
+import AdminRoot from "../pages/admin/AdminRoot"
+import AdminRoot from "../pages/admin/Dashboard"
+import CompanyDetail from "../pages/admin/CompanyDetail"
+import CompanyAdminRoot from '../pages/companyAdmin'
+import CreateLink from "../pages/companyAdmin/CreateLink";
+
 
 export const ROUTES = [{
         path: "/",
@@ -19,6 +27,19 @@ export const ROUTES = [{
         ],
     },
     {
+        path: "/admin",
+        element: < AdminRoot / > ,
+        children: [{
+                path: "",
+                element: < Dashboard / > ,
+            },
+            {
+                path: "company-detail/:id",
+                element: < CompanyDetail / > ,
+            },
+        ],
+    },
+    {
         path: "/company-admin",
         element: < CompanyAdminRoot / > ,
         children: [{
@@ -28,19 +49,6 @@ export const ROUTES = [{
             {
                 path: "create-link",
                 element: < CreateLink / > ,
-            },
-        ],
-    },
-    {
-        path: "/admin",
-        element: < AdminRoot / > ,
-        children: [{
-                path: "",
-                element: < Dashboard / > ,
-            },
-            {
-                path: "company-detail/:id",
-                element: < ProductDetail / > ,
             },
         ],
     },

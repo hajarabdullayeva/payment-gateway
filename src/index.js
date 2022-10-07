@@ -9,12 +9,11 @@ import {
 import {
   ROUTES
 } from "./routes";
-import ContextProvider from "context/ContextProvider";
 
 const router = createBrowserRouter(ROUTES);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render( < ContextProvider > < RouterProvider router = {
-    router
-  }
-  /></ContextProvider > );
+root.render( < RouterProvider router = {
+      router
+    }
+    /> );

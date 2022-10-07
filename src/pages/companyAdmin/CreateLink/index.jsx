@@ -6,7 +6,14 @@ function CreateLink() {
   return (
     <div className="create-link">
       <div>
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 20,
+            color: "#fff",
+          }}
+        >
           <img
             src="https://i.pinimg.com/736x/0d/cf/b5/0dcfb548989afdf22afff75e2a46a508.jpg"
             alt="companylogo"

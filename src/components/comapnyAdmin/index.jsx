@@ -1,216 +1,132 @@
-import { SmileOutlined } from "@ant-design/icons";
-import {
-  Cascader,
-  DatePicker,
-  Form,
-  Input,
-  InputNumber,
-  Mentions,
-  Select,
-  TimePicker,
-  TreeSelect,
-} from "antd";
+import { Button, Form, Input, Select, Space, Tooltip, Typography } from "antd";
 import React from "react";
 const { Option } = Select;
-const formItemLayout = {
-  labelCol: {
-    xs: {
-      span: 24,
-    },
-    sm: {
-      span: 6,
-    },
-  },
-  wrapperCol: {
-    xs: {
-      span: 24,
-    },
-    sm: {
-      span: 14,
-    },
-  },
-};
 
-const FormPayment = () => (
-  <Form {...formItemLayout}>
-    <Form.Item
-      label="Fail"
-      validateStatus="error"
-      help="Should be combination of numbers & alphabets"
-    >
-      <Input placeholder="unavailable choice" id="error" />
-    </Form.Item>
+const FormPayment = () => {
+  const onFinish = (values) => {
+    console.log("Received values of form: ", values);
+  };
 
-    <Form.Item label="Warning" validateStatus="warning">
-      <Input placeholder="Warning" id="warning" prefix={<SmileOutlined />} />
-    </Form.Item>
-
-    <Form.Item
-      label="Validating"
-      hasFeedback
-      validateStatus="validating"
-      help="The information is being validated..."
-    >
-      <Input placeholder="I'm the content is being validated" id="validating" />
-    </Form.Item>
-
-    <Form.Item label="Success" hasFeedback validateStatus="success">
-      <Input placeholder="I'm the content" id="success" />
-    </Form.Item>
-
-    <Form.Item label="Warning" hasFeedback validateStatus="warning">
-      <Input placeholder="Warning" id="warning2" />
-    </Form.Item>
-
-    <Form.Item
-      label="Fail"
-      hasFeedback
-      validateStatus="error"
-      help="Should be combination of numbers & alphabets"
-    >
-      <Input placeholder="unavailable choice" id="error2" />
-    </Form.Item>
-
-    <Form.Item label="Success" hasFeedback validateStatus="success">
-      <DatePicker
-        style={{
-          width: "100%",
-        }}
-      />
-    </Form.Item>
-
-    <Form.Item label="Warning" hasFeedback validateStatus="warning">
-      <TimePicker
-        style={{
-          width: "100%",
-        }}
-      />
-    </Form.Item>
-
-    <Form.Item label="Error" hasFeedback validateStatus="error">
-      <DatePicker.RangePicker
-        style={{
-          width: "100%",
-        }}
-      />
-    </Form.Item>
-
-    <Form.Item label="Error" hasFeedback validateStatus="error">
-      <Select placeholder="I'm Select" allowClear>
-        <Option value="1">Option 1</Option>
-        <Option value="2">Option 2</Option>
-        <Option value="3">Option 3</Option>
-      </Select>
-    </Form.Item>
-
-    <Form.Item
-      label="Validating"
-      hasFeedback
-      validateStatus="error"
-      help="Something breaks the rule."
-    >
-      <Cascader
-        placeholder="I'm Cascader"
-        options={[
-          {
-            value: "xx",
-            label: "xx",
-          },
-        ]}
-        allowClear
-      />
-    </Form.Item>
-
-    <Form.Item
-      label="Warning"
-      hasFeedback
-      validateStatus="warning"
-      help="Need to be checked"
-    >
-      <TreeSelect
-        placeholder="I'm TreeSelect"
-        treeData={[
-          {
-            value: "xx",
-            label: "xx",
-          },
-        ]}
-        allowClear
-      />
-    </Form.Item>
-
-    <Form.Item
-      label="inline"
-      style={{
-        marginBottom: 0,
+  return (
+    <Form
+      name="complex-form"
+      onFinish={onFinish}
+      labelCol={{
+        span: 8,
+      }}
+      wrapperCol={{
+        span: 16,
       }}
     >
-      <Form.Item
-        validateStatus="error"
-        help="Please select right date"
-        style={{
-          display: "inline-block",
-          width: "calc(50% - 12px)",
-        }}
-      >
-        <DatePicker />
+      <Form.Item label="Email">
+        <Form.Item
+          name="email"
+          noStyle
+          rules={[
+            {
+              required: true,
+              message: "Email is required",
+            },
+          ]}
+        >
+          <Input
+            style={{
+              width: "100%",
+            }}
+            placeholder="test@gmail.com"
+          />
+        </Form.Item>
       </Form.Item>
-      <span
-        style={{
-          display: "inline-block",
-          width: "24px",
-          lineHeight: "32px",
-          textAlign: "center",
-        }}
-      >
-        -
-      </span>
-      <Form.Item
-        style={{
-          display: "inline-block",
-          width: "calc(50% - 12px)",
-        }}
-      >
-        <DatePicker />
+
+      <Form.Item label="Card Details">
+        <Form.Item
+          name="email"
+          noStyle
+          rules={[
+            {
+              required: true,
+              message: "Email is required",
+            },
+          ]}
+        >
+          <Input
+            style={{
+              width: "100%",
+            }}
+            placeholder="Please input"
+          />
+        </Form.Item>
+
+        <Space>
+          <Input.Group compact>
+            <Form.Item
+              name={["Card", "card date"]}
+              noStyle
+              rules={[
+                {
+                  required: true,
+                  message: "Card Date is required",
+                },
+              ]}
+            >
+              <Input
+                style={{
+                  width: "50%",
+                }}
+                placeholder="MM/YY"
+              />
+            </Form.Item>
+            <Form.Item
+              name={["card", "CVC"]}
+              noStyle
+              rules={[
+                {
+                  required: true,
+                  message: "CVC is required",
+                },
+              ]}
+            >
+              <Input
+                style={{
+                  width: "50%",
+                }}
+                placeholder="CVC"
+              />
+            </Form.Item>
+          </Input.Group>
+          <Tooltip title="Useful information">
+            <Typography.Link href="#API">Need Help?</Typography.Link>
+          </Tooltip>
+        </Space>
       </Form.Item>
-    </Form.Item>
 
-    <Form.Item label="Success" hasFeedback validateStatus="success">
-      <InputNumber
-        style={{
-          width: "100%",
-        }}
-      />
-    </Form.Item>
+      <Form.Item label="Name on the card">
+        <Form.Item
+          name="name"
+          noStyle
+          rules={[
+            {
+              required: true,
+              message: "Name is required",
+            },
+          ]}
+        >
+          <Input
+            style={{
+              width: "100%",
+            }}
+            placeholder="Hajar Abdullayeva"
+          />
+        </Form.Item>
+      </Form.Item>
 
-    <Form.Item label="Success" hasFeedback validateStatus="success">
-      <Input allowClear placeholder="with allowClear" />
-    </Form.Item>
-
-    <Form.Item label="Warning" hasFeedback validateStatus="warning">
-      <Input.Password placeholder="with input password" />
-    </Form.Item>
-
-    <Form.Item label="Error" hasFeedback validateStatus="error">
-      <Input.Password
-        allowClear
-        placeholder="with input password and allowClear"
-      />
-    </Form.Item>
-
-    <Form.Item label="Fail" validateStatus="error" hasFeedback>
-      <Mentions />
-    </Form.Item>
-
-    <Form.Item
-      label="Fail"
-      validateStatus="error"
-      hasFeedback
-      help="Should have something"
-    >
-      <Input.TextArea allowClear showCount />
-    </Form.Item>
-  </Form>
-);
+      <Form.Item label=" " colon={false}>
+        <Button type="primary" htmlType="submit">
+          Submit
+        </Button>
+      </Form.Item>
+    </Form>
+  );
+};
 
 export default FormPayment;

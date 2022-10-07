@@ -1,5 +1,5 @@
 import React from "react";
-import FormPayment from "../../../components/comapnyAdmin";
+import FormPayment from "../../../components/companyAdmin";
 import "./link.css";
 
 function CreateLink() {

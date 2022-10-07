@@ -1,14 +1,22 @@
 import { Button, Form, Input, Select, Space, Tooltip, Typography } from "antd";
 import React from "react";
-const { Option } = Select;
+import { paymentNetwork } from "../../network/requests/paymentNetwork.js";
 
 const FormPayment = () => {
+  const [form] = Form.useForm();
+
+  function addPayment(values) {
+    paymentNetwork.addPayment(values);
+    form.resetFields();
+  }
+
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
   };
 
   return (
     <Form
+      form={form}
       name="complex-form"
       onFinish={onFinish}
       labelCol={{
@@ -40,12 +48,12 @@ const FormPayment = () => {
 
       <Form.Item label="Card Details">
         <Form.Item
-          name="email"
+          name="card"
           noStyle
           rules={[
             {
               required: true,
-              message: "Email is required",
+              message: "Card number is required",
             },
           ]}
         >
@@ -53,7 +61,7 @@ const FormPayment = () => {
             style={{
               width: "100%",
             }}
-            placeholder="Please input"
+            placeholder="1234 1234 1234 1234"
           />
         </Form.Item>
 
@@ -95,7 +103,12 @@ const FormPayment = () => {
             </Form.Item>
           </Input.Group>
           <Tooltip title="Useful information">
-            <Typography.Link href="#API">Need Help?</Typography.Link>
+            <Typography.Link
+              href="#API"
+              style={{ color: "#fff", fontWeight: 600 }}
+            >
+              Need Help?
+            </Typography.Link>
           </Tooltip>
         </Space>
       </Form.Item>
@@ -121,7 +134,7 @@ const FormPayment = () => {
       </Form.Item>
 
       <Form.Item label=" " colon={false}>
-        <Button type="primary" htmlType="submit">
+        <Button type="primary" htmlType="submit" onClick={addPayment}>
           Submit
         </Button>
       </Form.Item>

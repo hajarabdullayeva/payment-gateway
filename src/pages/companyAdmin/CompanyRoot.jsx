@@ -1,7 +1,16 @@
-import React from 'react'
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
 
 const CompanyRoot = () => {
-  return <div>CompanyRoot</div>
-}
+  return (
+    <>
+      <Header />
+      <Outlet />
+      <Footer />
+    </>
+  );
+};
 
-export default CompanyRoot
+export default CompanyRoot;

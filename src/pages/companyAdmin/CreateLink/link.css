@@ -1,0 +1,22 @@
+.create-link {
+  display: flex;
+  padding: 100px;
+  justify-content: center;
+  gap: 200px;
+}
+
+img {
+  width: 300px;
+}
+
+.price {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.description {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

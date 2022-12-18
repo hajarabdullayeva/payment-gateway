@@ -14,10 +14,4 @@ export const registerSchema = yup.object().shape({
         .string("password should be a string")
         .oneOf([yup.ref("password")])
         .required("confirm password is required"),
-    accountType: yup
-        .string("account type should be a string")
-        .oneOf(["female", "male"])
-        .required("Gender is required"),
-    remember: yup.boolean().oneOf([true], "Please tick checkbox"),
-    toggle: yup.boolean().oneOf([true], "Please toggle accept"),
 });
